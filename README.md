@@ -39,6 +39,7 @@
         Equal
         Backspace
         AC
+        etc.
 
     2. Set numbers
     3. Set input/output area

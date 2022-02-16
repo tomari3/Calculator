@@ -144,6 +144,7 @@ body {
   height: 30rem;
   width: 60rem;
   background-color: rgb(31, 29, 29);
+  overflow: auto;
 }
 
 #output-display {
@@ -154,8 +155,17 @@ body {
   text-align: end;
   padding: 0.5em;
   padding-right: 1em;
+  display: flex;
+  flex-direction: column;
 }
-
+.calc-button {
+  text-align: center;
+  padding: 0.3em 1em;
+  height: 3em;
+  width: 4em;
+  border-radius: 2.5em;
+  border-style: none;
+}
 #buttons-container {
   padding: 2em;
   flex: 2 1 auto;
@@ -166,23 +176,18 @@ body {
   gap: 1em;
 }
 
-#global-operations,
-#main-operations,
-#numbers-container,
-#more-operations {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+#buttons-container {
+  background-color: rgb(204, 127, 255);
 }
 
 #main-operations {
-  flex: 1 1 auto;
+  background-color: aquamarine;
 }
 
 #numbers-container {
-  flex: 3 1 auto;
+  background-color: blue;
 }
 
 #more-operations {
-  flex: 5 1 auto;
+  background-color: bisque;
 }
