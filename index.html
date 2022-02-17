@@ -9,9 +9,25 @@
     <title>Calculator</title>
   </head>
   <body>
-    <section id="calculator-container">
+    <section id="history-container">
+      <div id="history-list">
+        <h1>No history here!</h1>
+      </div>
+    </section>
+    <section class="box-shadow" id="calculator-container">
       <div id="output-display">
-        <div id="upper-display">result</div>
+        <div id="upper-display">
+          <p id="upper-display-num">result</p>
+          <span>
+            <img
+              id="history"
+              src="history.svg"
+              alt="see calc history since last AC"
+              height="20px"
+              width="20px"
+            />
+          </span>
+        </div>
         <div id="main-display">0</div>
       </div>
       <div id="buttons-container">

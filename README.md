@@ -49,3 +49,50 @@
     7. TEST!
 
     # Pseudo
+
+take number [0]
+log on display
+show on display
+log on beforeOperand
+
+- log on upperDisplay
+
+take char[1]
+if another number
+add to display as string
+add to beforeOperand as string (1 + 1 = 11)
+repeat
+
+take operand
+if any operand == onDisplay[-1] - return
+
+- else -
+  set last operator used.
+  log to display
+  show on display
+  set afterOperand to zero
+  if includes other operand
+  log to display
+  show on display
+  set before operand to sum
+  set after operand to 0
+  set last operator used
+  return
+
+take number when last is operation
+log on display
+show on display
+log on afterOperand
+log currentSum of before and after
+log currentSum to upperDisplay
+show on upperDisplay
+
+get equal
+get sum
+set sum to onDisplay
+set onDisplay to upper display
+show onDisplay show upper display
+set before to sum
+set after to 0;
+
+(mainOpsDoc[i].textContent != "/" || mainOpsDoc[i].textContent != "\*")
