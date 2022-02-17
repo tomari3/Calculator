@@ -233,9 +233,17 @@ power2Doc.addEventListener("click", (e) => {
 power3Doc.addEventListener("click", (e) => {
   immediateOperation(power3, "*3");
 });
-s = "u+221A";
+
 squareRootDoc.addEventListener("click", (e) => {
-  immediateOperation(squareRoot, s);
+  immediateOperation(squareRoot, "√");
+});
+
+cubicRootDoc.addEventListener("click", (e) => {
+  immediateOperation(cubicRoot, "∛");
+});
+
+PIdoc.addEventListener("click", (e) => {
+  immediateOperation(PI, "π");
 });
 
 const immediateOperation = (op, sign) => {
@@ -248,6 +256,7 @@ const immediateOperation = (op, sign) => {
   printPast(pastCalcEquation);
   beforeOperand = sum;
   afterOperand = 0;
+  historyHeader.textContent = "history";
 };
 
 acDoc.addEventListener("click", (e) => {
@@ -293,7 +302,7 @@ function toggleStyle(el, prop, style1, style2) {
 
 history.addEventListener("click", (e) => {
   console.log("hey");
-  toggleStyle(historyBox, "width", "15rem", "0");
+  toggleStyle(historyBox, "width", "18rem", "0");
   toggleStyle(historyBox, "opacity", "100", "0");
 });
 
