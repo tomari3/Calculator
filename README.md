@@ -95,4 +95,7 @@ show onDisplay show upper display
 set before to sum
 set after to 0;
 
-(mainOpsDoc[i].textContent != "/" || mainOpsDoc[i].textContent != "\*")
+factorial
+take number
+get sum
+take number + sign assign to onDisplay then assign to upperDisplay

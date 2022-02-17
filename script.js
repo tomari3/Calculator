@@ -168,7 +168,7 @@ for (let i = 0; i < mainOpsDoc.length - 1; i++) {
     }
     let operationSign;
     operationSign = mainOpsDoc[i].textContent;
-    if (isIncludeOperation(operationSigns, toString(onDisplay))) {
+    if (isIncludeOperation(operationSigns, onDisplay)) {
       beforeOperand = doOperation(
         mainOpsArr[lastOperator],
         beforeOperand,
@@ -192,7 +192,7 @@ percentageDoc.addEventListener("click", (e) => {
   }
   let operationSign;
   operationSign = "%";
-  if (isIncludeOperation(operationSigns, toString(onDisplay))) {
+  if (isIncludeOperation(operationSigns, onDisplay)) {
     beforeOperand = doOperation(
       mainOpsArr[lastOperator],
       beforeOperand,
@@ -212,13 +212,17 @@ percentageDoc.addEventListener("click", (e) => {
 // Factorial
 
 let isLastOperation = (substring, string) => {
-  if (substring.some((sign) => string.charAt(string.length - 1) == sign)) {
+  if (
+    substring.some(
+      (sign) => string.toString().charAt(string.length - 1) == sign
+    )
+  ) {
     return true;
   }
 };
 let isIncludeOperation = (substring, string) => {
-  string = toString(string);
-  if (substring.some((sign) => string.includes(sign))) {
+  string = string.toString();
+  if (substring.some((sign) => string.toString().includes(sign))) {
     return true;
   }
 };
