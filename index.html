@@ -9,78 +9,91 @@
     <title>Calculator</title>
   </head>
   <body>
-    <section id="history-container">
-      <div id="history-list">
-        <h1>No history here!</h1>
-      </div>
-    </section>
-    <section class="box-shadow" id="calculator-container">
-      <div id="output-display">
-        <div id="upper-display">
-          <p id="upper-display-num">result</p>
-          <span>
-            <img
-              id="history"
-              src="history.svg"
-              alt="see calc history since last AC"
-              height="20px"
-              width="20px"
-            />
-          </span>
-        </div>
-        <div id="main-display">0</div>
-      </div>
-      <div id="buttons-container">
-        <div id="main-operations">
-          <button id="add" class="calc-button">+</button>
-          <button id="subtract" class="calc-button">-</button>
-          <button id="multiply" class="calc-button">*</button>
-          <button id="divide" class="calc-button">/</button>
-          <button id="equal" class="calc-button">=</button>
-        </div>
+    <div class="header">
+        <h1 class="depth">the apple calculator</h1>
+      </div class="calculator">
 
-        <div id="numbers-container">
-          <div id="global-operations">
-            <button id="percentage" class="calc-button">%</button>
-            <button id="AC" class="calc-button">AC</button>
-          </div>
-          <div id="number-container">
-            <button id="7" class="calc-button number">7</button>
-            <button id="8" class="calc-button number">8</button>
-            <button id="9" class="calc-button number">9</button>
-            <button id="4" class="calc-button number">4</button>
-            <button id="5" class="calc-button number">5</button>
-            <button id="6" class="calc-button number">6</button>
-            <button id="1" class="calc-button number">1</button>
-            <button id="2" class="calc-button number">2</button>
-            <button id="3" class="calc-button number">3</button>
-            <button id="0" class="calc-button number start long">0</button>
-            <button id="." class="calc-button number">.</button>
-          </div>
+    <main>
+     
+      <section id="history-container">
+        <div id="history-list">
+          <h1>No history here!</h1>
         </div>
+      </section>
+      <section class="box-shadow" id="calculator-container">
+        <div id="output-display">
+          <div id="upper-display">
+            <p id="upper-display-num">result</p>
+            <span>
+              <img
+                id="history"
+                src="history.svg"
+                alt="see calc history since last AC"
+                height="20px"
+                width="20px"
+              />
+            </span>
+          </div>
+          <div id="main-display">0</div>
+        </div>
+        <div id="buttons-container">
+          <div id="main-operations">
+            <button id="add" class="calc-button">+</button>
+            <button id="subtract" class="calc-button">-</button>
+            <button id="multiply" class="calc-button">*</button>
+            <button id="divide" class="calc-button">/</button>
+            <button id="equal" class="calc-button">=</button>
+          </div>
 
-        <div id="more-operations">
-          <button id="factorial" class="calc-button">x!</button>
-          <button id="power2" class="calc-button">x<sup>2</sup></button>
-          <button id="power3" class="calc-button">x<sup>3</sup></button>
-          <button id="powernth" class="calc-button">x<sup>y</sup></button>
-          <button id="square-root" class="calc-button">&#8730;</button>
-          <button id="cubic-root" class="calc-button">
-            <sup>3</sup>&#8730;
-          </button>
-          <button id="PI" class="calc-button">&#8508;</button>
-          <button id="rand" class="calc-button">rand</button>
-          <button id="cos" class="calc-button">cos</button>
-          <button id="cosh" class="calc-button">cosh</button>
-          <button id="tan" class="calc-button">tan</button>
-          <button id="tanh" class="calc-button">tanh</button>
-          <button id="in" class="calc-button">In</button>
-          <button id="EE" class="calc-button">EE</button>
-          <button id="e-x" class="calc-button">e <sup>x</sup></button>
-          <button id="e" class="calc-button">e</button>
-          <button id="log" class="calc-button">log<sub>10</sub></button>
+          <div id="numbers-container">
+            <div id="global-operations">
+              <button id="percentage" class="calc-button">%</button>
+              <button id="AC" class="calc-button">AC</button>
+            </div>
+            <div id="number-container">
+              <button id="7" class="calc-button number">7</button>
+              <button id="8" class="calc-button number">8</button>
+              <button id="9" class="calc-button number">9</button>
+              <button id="4" class="calc-button number">4</button>
+              <button id="5" class="calc-button number">5</button>
+              <button id="6" class="calc-button number">6</button>
+              <button id="1" class="calc-button number">1</button>
+              <button id="2" class="calc-button number">2</button>
+              <button id="3" class="calc-button number">3</button>
+              <button id="0" class="calc-button number start long">0</button>
+              <button id="." class="calc-button number">.</button>
+            </div>
+          </div>
+
+          <div id="more-operations">
+            <button id="factorial" class="calc-button">x!</button>
+            <button id="power2" class="calc-button">x<sup>2</sup></button>
+            <button id="power3" class="calc-button">x<sup>3</sup></button>
+            <button id="powernth" class="calc-button">x<sup>y</sup></button>
+            <button id="square-root" class="calc-button">&#8730;</button>
+            <button id="cubic-root" class="calc-button">
+              <sup>3</sup>&#8730;
+            </button>
+            <button id="PI" class="calc-button">&#8508;</button>
+            <button id="rand" class="calc-button">rand</button>
+            <button id="cos" class="calc-button">cos</button>
+            <button id="cosh" class="calc-button">cosh</button>
+            <button id="tan" class="calc-button">tan</button>
+            <button id="tanh" class="calc-button">tanh</button>
+            <button id="in" class="calc-button">In</button>
+            <button id="EE" class="calc-button">EE</button>
+            <button id="e-x" class="calc-button">e <sup>x</sup></button>
+            <button id="e" class="calc-button">e</button>
+            <button id="log" class="calc-button">log<sub>10</sub></button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      
+    </main>
+    <footer>
+        <a href="https://en.wikipedia.org/wiki/Calculator_(Apple)">Inspired by the Apple calculator</a>
+        <a href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator">Instructed by 'The Odin Project' calculator lesson</a>
+        <a href="https://github.com/tomari3/Calculator">GitHub</a>
+    </footer>
   </body>
 </html>

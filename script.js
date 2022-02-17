@@ -23,8 +23,10 @@ let divide = (...theArgs) => {
   });
 };
 
-// More Operations
-let percentage = (num1, num2) => {};
+let percentage = (num1, num2) => {
+  let sum = (num1 / 100) * num2;
+  return sum;
+};
 
 let factorial = (num) => {
   let result = 1;
@@ -68,6 +70,7 @@ const upperDisplayDoc = document.getElementById("upper-display-num");
 
 // global operations doc
 const acDoc = document.getElementById("AC");
+const percentageDoc = document.getElementById("percentage");
 
 // global operations function
 const history = document.getElementById("history");
@@ -164,6 +167,29 @@ for (let i = 0; i < mainOpsDoc.length - 1; i++) {
   });
 }
 
+percentageDoc.addEventListener("click", (e) => {
+  if (isLastOperation(operationSigns, toString(onDisplay))) {
+    return;
+  }
+  let operationSign;
+  operationSign = "%";
+  if (isIncludeOperation(operationSigns, toString(onDisplay))) {
+    beforeOperand = doOperation(
+      mainOpsArr[lastOperator],
+      beforeOperand,
+      afterOperand
+    );
+    onDisplay += operationSign;
+    mainDisplayDoc.textContent += operationSign;
+    afterOperand = 0;
+    lastOperator = 3;
+    return;
+  }
+  onDisplay += operationSign;
+  mainDisplayDoc.textContent += operationSign;
+  lastOperator = 3;
+});
+
 let isLastOperation = (substring, string) => {
   if (substring.some((sign) => string.charAt(string.length - 1) == sign)) {
     return true;
@@ -179,6 +205,7 @@ let isIncludeOperation = (substring, string) => {
 acDoc.addEventListener("click", (e) => {
   AC();
 });
+
 let AC = () => {
   beforeOperand = "";
   afterOperand = 0;
@@ -189,7 +216,6 @@ let AC = () => {
   mainDisplayDoc.textContent = 0;
   upperDisplayDoc.textContent = "result";
 };
-let mainOpsArr = [add, subtract, multiply, divide];
 
 let printPast = (solution) => {
   let a = document.createElement("p");
@@ -218,7 +244,7 @@ function toggleStyle(el, prop, style1, style2) {
 
 history.addEventListener("click", (e) => {
   console.log("hey");
-  toggleStyle(historyBox, "height", "30rem", "0");
+  toggleStyle(historyBox, "width", "15rem", "0");
   toggleStyle(historyBox, "opacity", "100", "0");
 });
 
@@ -232,3 +258,5 @@ let debug = () => {
     console.log("action end");
   });
 };
+
+let mainOpsArr = [add, subtract, multiply, divide];

@@ -134,20 +134,61 @@ table {
 
 body {
   display: flex;
-  justify-content: center;
-  align-content: center;
-  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
+main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: beige;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding: 5em 0 0 1em;
+  color: #a4a4a4;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  text-transform: uppercase;
+  font-size: 9em;
+  color: rgb(215, 215, 215);
+  z-index: -1;
+}
+
+.depth {
+  color: black;
+  position: relative;
+}
+.depth:before,
+.depth:after {
+  content: attr(title);
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+}
+.depth:before {
+  top: 1px;
+  left: 1px;
+}
+.depth:after {
+  top: 2px;
+  left: 2px;
+}
 
 #history-container {
-  background-color: #030303;
-  color: rgb(255, 255, 255);
-  height: 0;
-  margin-top: 10%;
-  z-index: -1;
-  width: 12rem;
+  color: rgb(0, 0, 0);
+  height: 30rem;
+  width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,9 +199,8 @@ body {
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
   border-radius: 2em;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  transition: all 0.6s cubic-bezier(0.61, 1, 0.88, 1);
+
+  transition: all 0.9s cubic-bezier(0, 0.55, 0.45, 1);
 }
 
 .box-shadow {
@@ -188,14 +228,13 @@ body {
   color: #030303;
   background-color: #a5a5a5;
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: 1.5em;
   font-weight: lighter;
 }
 
 #calculator-container {
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
   height: 30rem;
   width: 50rem;
   background-color: rgb(0, 0, 0);
@@ -310,4 +349,19 @@ button:hover {
 }
 button:active {
   border: 1px solid white;
+}
+footer {
+  background-color: #fea00a;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4em;
+  flex-shrink: 0;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.7em;
 }
