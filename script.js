@@ -57,6 +57,16 @@ let PI = (num) => {
 };
 const dot = ".";
 
+let immediateOperationsArr = [
+  factorial,
+  power2,
+  power3,
+  power,
+  squareRoot,
+  cubicRoot,
+  PI,
+];
+
 function doOperation(func, a, b) {
   sum = func(+a, +b);
   return sum;
@@ -87,6 +97,15 @@ const divideDoc = document.getElementById("divide");
 const equalDoc = document.getElementById("equal");
 const mainOpsDoc = document.querySelectorAll("#main-operations button");
 
+// immediate functions doc
+const factorialDoc = document.getElementById("factorial");
+const power2Doc = document.getElementById("power2");
+const power3Doc = document.getElementById("power3");
+const powerDoc = document.getElementById("powernth");
+const squareRootDoc = document.getElementById("square-root");
+const cubicRootDoc = document.getElementById("cubic-root");
+const PIdoc = document.getElementById("PI");
+
 // Operands list
 let beforeOperand = "";
 let afterOperand = 0;
@@ -98,7 +117,7 @@ let onDisplay = "";
 let onUpperDisplay = "";
 let pastCalcDisplay = "";
 
-const operationSigns = ["+", "-", "*", "/"];
+const operationSigns = ["+", "-", "*", "/", "%"];
 
 // numbers
 const numbersDoc = [...document.getElementsByClassName("number")];
@@ -144,7 +163,7 @@ for (let i = 0; i < numbersDoc.length; i++) {
 // Main Operations
 for (let i = 0; i < mainOpsDoc.length - 1; i++) {
   mainOpsDoc[i].addEventListener("click", (e) => {
-    if (isLastOperation(operationSigns, toString(onDisplay))) {
+    if (isLastOperation(operationSigns, onDisplay)) {
       return;
     }
     let operationSign;
@@ -166,9 +185,9 @@ for (let i = 0; i < mainOpsDoc.length - 1; i++) {
     lastOperator = i;
   });
 }
-
+// Percentage
 percentageDoc.addEventListener("click", (e) => {
-  if (isLastOperation(operationSigns, toString(onDisplay))) {
+  if (isLastOperation(operationSigns, onDisplay)) {
     return;
   }
   let operationSign;
@@ -182,13 +201,15 @@ percentageDoc.addEventListener("click", (e) => {
     onDisplay += operationSign;
     mainDisplayDoc.textContent += operationSign;
     afterOperand = 0;
-    lastOperator = 3;
+    lastOperator = 4;
     return;
   }
   onDisplay += operationSign;
   mainDisplayDoc.textContent += operationSign;
-  lastOperator = 3;
+  lastOperator = 4;
 });
+
+// Factorial
 
 let isLastOperation = (substring, string) => {
   if (substring.some((sign) => string.charAt(string.length - 1) == sign)) {
@@ -200,6 +221,33 @@ let isIncludeOperation = (substring, string) => {
   if (substring.some((sign) => string.includes(sign))) {
     return true;
   }
+};
+
+factorialDoc.addEventListener("click", (e) => {
+  immediateOperation(factorial, "!");
+});
+
+power2Doc.addEventListener("click", (e) => {
+  immediateOperation(power2, "*2");
+});
+power3Doc.addEventListener("click", (e) => {
+  immediateOperation(power3, "*3");
+});
+s = "u+221A";
+squareRootDoc.addEventListener("click", (e) => {
+  immediateOperation(squareRoot, s);
+});
+
+const immediateOperation = (op, sign) => {
+  let sum;
+  sum = doOperation(op, beforeOperand);
+  mainDisplayDoc.textContent = sum;
+  onUpperDisplay = beforeOperand + sign;
+  upperDisplayDoc.textContent = onUpperDisplay;
+  pastCalcEquation = `${onUpperDisplay} = ${sum}`;
+  printPast(pastCalcEquation);
+  beforeOperand = sum;
+  afterOperand = 0;
 };
 
 acDoc.addEventListener("click", (e) => {
@@ -223,6 +271,7 @@ let printPast = (solution) => {
   historyList.appendChild(a);
 };
 
+// equal
 mainOpsDoc[4].addEventListener("click", (e) => {
   let sum;
   sum = doOperation(mainOpsArr[lastOperator], beforeOperand, afterOperand);
@@ -259,4 +308,4 @@ let debug = () => {
   });
 };
 
-let mainOpsArr = [add, subtract, multiply, divide];
+let mainOpsArr = [add, subtract, multiply, divide, percentage];

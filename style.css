@@ -139,6 +139,7 @@ body {
   height: 100vh;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
+  user-select: none;
 }
 main {
   display: flex;
@@ -199,7 +200,6 @@ main {
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
   border-radius: 2em;
-
   transition: all 0.9s cubic-bezier(0, 0.55, 0.45, 1);
 }
 
@@ -364,4 +364,9 @@ footer a {
   text-decoration: none;
   color: black;
   font-size: 0.7em;
+}
+
+sup {
+  font-size: 0.6em;
+  vertical-align: super;
 }
