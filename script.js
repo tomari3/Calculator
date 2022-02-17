@@ -117,7 +117,7 @@ let onDisplay = "";
 let onUpperDisplay = "";
 let pastCalcDisplay = "";
 
-const operationSigns = ["+", "-", "*", "/", "%"];
+const operationSigns = ["+", "-", "×", "/", "%"];
 
 // numbers
 const numbersDoc = [...document.getElementsByClassName("number")];
@@ -127,7 +127,6 @@ for (let i = 0; i < numbersDoc.length; i++) {
     let inputNumber;
     let currSum;
     let sum;
-
     inputNumber = numbersDoc[i].id;
     if (isLastOperation(operationSigns, onDisplay)) {
       onDisplay += inputNumber; // log on display
@@ -163,6 +162,9 @@ for (let i = 0; i < numbersDoc.length; i++) {
 // Main Operations
 for (let i = 0; i < mainOpsDoc.length - 1; i++) {
   mainOpsDoc[i].addEventListener("click", (e) => {
+    if (mainOpsDoc[i] && afterOperand === 0) {
+      afterOperand = 1;
+    }
     if (isLastOperation(operationSigns, onDisplay)) {
       return;
     }
