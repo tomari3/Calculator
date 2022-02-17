@@ -116,6 +116,7 @@ let onDisplay = "";
 let onUpperDisplay = "";
 let lastOperator = "";
 let onOperator;
+let pastCalc = [];
 
 // numbers
 const numbersDoc = [...document.getElementsByClassName("number")];
@@ -206,3 +207,13 @@ let AC = () => {
   upperDisplayDoc.textContent = "waiting";
 };
 let mainOpsArr = [add, subtract, multiply, divide];
+
+mainOpsDoc[4].addEventListener("click", (e) => {
+  let sum = doOperation(mainOpsArr[lastOperator], beforeOperand, afterOperand);
+  beforeOperand = sum;
+  afterOperand = 0;
+  upperDisplayDoc.textContent = onDisplay;
+  onDisplay = toString(sum);
+  mainDisplayDoc.textContent = beforeOperand;
+  pastCalc.push(sum);
+});
